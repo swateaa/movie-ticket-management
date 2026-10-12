@@ -7,42 +7,77 @@
   <meta name="theme-color" content="#090b13">
   <meta name="description" content="Discover movies, choose your seats and book your next cinema experience with CineBook.">
   <title>CineBook — Your Movie Destination</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+
+  <!-- NAVIGATION -->
   <header class="navbar">
-    <a href="#home" class="logo" data-page="home">cine<span>book</span><i>.</i></a>
+    <a href="#home" class="logo" data-page="home">
+      cine<span>book</span><i>.</i>
+    </a>
 
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#home" data-page="home" class="nav-link active">Home</a>
       <a href="#movies" data-page="movies" class="nav-link">Movies</a>
       <a href="#book" data-page="book" class="nav-link">Book Tickets</a>
       <a href="#mybookings" data-page="mybookings" class="nav-link">My Bookings</a>
+      <a href="#login" data-page="login" class="nav-link" id="login-nav">Login</a>
     </nav>
 
-    <button class="profile-button" id="profile-button" aria-label="View my bookings">S</button>
+    <button
+      class="profile-button"
+      id="profile-button"
+      type="button"
+      aria-label="View my bookings"
+      title="My bookings"
+    >S</button>
   </header>
 
   <main>
-    <!-- HOME PAGE -->
+
+    <!-- ================= HOME PAGE ================= -->
     <section class="page active" id="page-home">
+
       <div class="hero">
         <div class="hero-backdrop"></div>
+
         <div class="hero-content">
-          <span class="pill"><span class="live-dot"></span> THE CINEMA EXPERIENCE</span>
+          <span class="pill">
+            <span class="live-dot"></span>
+            THE CINEMA EXPERIENCE
+          </span>
+
           <p class="hero-kicker">YOUR NEXT OBSESSION STARTS HERE</p>
+
           <h1>Stories worth<br>the <span>big screen.</span></h1>
-          <p class="hero-description">Escape the ordinary. Discover unforgettable stories, find your perfect seats and make tonight a movie night.</p>
+
+          <p class="hero-description">
+            Escape the ordinary. Discover unforgettable stories,
+            find your perfect seats and make tonight a movie night.
+          </p>
+
           <div class="hero-actions">
-            <button class="btn btn-primary" data-page="movies">Explore Movies <span>→</span></button>
-            <button class="btn btn-ghost" data-page="book">Book a Ticket</button>
+            <button class="btn btn-primary" type="button" data-page="movies">
+              Explore Movies <span>→</span>
+            </button>
+
+            <button class="btn btn-ghost" type="button" data-page="book">
+              Book a Ticket
+            </button>
           </div>
-          <div class="hero-footnote"><span>✦</span> Your seat. Your story. Your cinema.</div>
+
+          <div class="hero-footnote">
+            <span>✦</span> Your seat. Your story. Your cinema.
+          </div>
         </div>
+
         <div class="hero-side">
           <div class="hero-poster">
             <div class="poster-orbit"></div>
@@ -51,42 +86,78 @@
             <strong>BEYOND<br>THE STARS</strong>
             <span class="hero-poster-bottom">A CINEMATIC EXPERIENCE</span>
           </div>
-          <div class="floating-rating"><span>★</span> Top picks for movie lovers</div>
+
+          <div class="floating-rating">
+            <span>★</span> Top picks for movie lovers
+          </div>
         </div>
+
         <div class="hero-index">01 <span>/ 04</span></div>
       </div>
 
       <section class="content-section">
         <div class="section-heading">
-          <div><span class="eyebrow">HANDPICKED FOR YOU</span><h2>Trending <span>now.</span></h2></div>
-          <button class="text-link" data-page="movies">View all movies ↗</button>
+          <div>
+            <span class="eyebrow">HANDPICKED FOR YOU</span>
+            <h2>Trending <span>now.</span></h2>
+          </div>
+
+          <button class="text-link" type="button" data-page="movies">
+            View all movies ↗
+          </button>
         </div>
+
         <div class="movie-grid" id="home-movies"></div>
       </section>
 
       <section class="experience-banner">
         <div class="experience-icon">🎟️</div>
-        <div><span class="eyebrow">YOUR NIGHT, UPGRADED</span><h2>Good movies. Great memories.</h2><p>Choose your favourite film and make it a night to remember.</p></div>
-        <button class="btn btn-primary" data-page="movies">Find your movie →</button>
+
+        <div>
+          <span class="eyebrow">YOUR NIGHT, UPGRADED</span>
+          <h2>Good movies. Great memories.</h2>
+          <p>Choose your favourite film and make it a night to remember.</p>
+        </div>
+
+        <button class="btn btn-primary" type="button" data-page="movies">
+          Find your movie →
+        </button>
       </section>
     </section>
 
-    <!-- MOVIES PAGE -->
+
+    <!-- ================= MOVIES PAGE ================= -->
     <section class="page" id="page-movies">
+
       <div class="page-banner">
         <span class="eyebrow">THE COLLECTION</span>
         <h1>Find your <span>next favourite.</span></h1>
-        <p>From edge-of-your-seat thrillers to stories that stay with you.</p>
+        <p>
+          From edge-of-your-seat thrillers to stories that stay with you.
+        </p>
       </div>
 
       <section class="content-section catalog-section">
         <div class="catalog-toolbar">
-          <div><h2>Now showing</h2><p class="muted">Pick a film. We'll handle the movie magic.</p></div>
+          <div>
+            <h2>Now showing</h2>
+            <p class="muted">Pick a film. We'll handle the movie magic.</p>
+          </div>
+
           <span id="movie-count" class="count-badge">6 FILMS</span>
         </div>
 
         <div class="filter-bar">
-          <label class="search-box"><span>⌕</span><input id="movie-search" type="search" placeholder="Search movies..." aria-label="Search movies"></label>
+          <label class="search-box">
+            <span>⌕</span>
+            <input
+              id="movie-search"
+              type="search"
+              placeholder="Search movies..."
+              aria-label="Search movies"
+            >
+          </label>
+
           <select id="genre-filter" aria-label="Filter movies by genre">
             <option value="All">All genres</option>
             <option value="Action">Action</option>
@@ -96,81 +167,403 @@
             <option value="Animation">Animation</option>
           </select>
         </div>
+
         <div class="movie-grid" id="all-movies"></div>
       </section>
     </section>
 
-    <!-- BOOKING PAGE -->
+
+    <!-- ================= BOOK TICKETS PAGE ================= -->
     <section class="page" id="page-book">
+
       <div class="page-banner compact-banner">
         <span class="eyebrow">RESERVE YOUR MOMENT</span>
         <h1>Your movie night, <span>your way.</span></h1>
-        <p>Choose your film, pick your seats and get ready for the show.</p>
+        <p>
+          Choose your film, pick your seats and get ready for the show.
+        </p>
       </div>
 
       <section class="content-section">
         <div class="booking-layout">
+
+          <!-- BOOKING FORM -->
           <div class="booking-main panel">
-            <div class="step-heading"><span class="step-number">01</span><div><h2>Choose your movie</h2><p class="muted">What are we watching?</p></div></div>
+
+            <div class="step-heading">
+              <span class="step-number">01</span>
+              <div>
+                <h2>Choose your movie</h2>
+                <p class="muted">What are we watching?</p>
+              </div>
+            </div>
+
             <label class="field-label" for="selected-movie">Movie</label>
-            <select id="selected-movie"><option value="">Select a movie</option></select>
+            <select id="selected-movie">
+              <option value="">Select a movie</option>
+            </select>
 
             <div class="form-grid">
-              <div><label class="field-label" for="show-date">Date</label><input id="show-date" type="date"></div>
-              <div><label class="field-label" for="show-time">Showtime</label><select id="show-time"><option>10:00 AM</option><option>1:30 PM</option><option>5:00 PM</option><option>8:30 PM</option></select></div>
+              <div>
+                <label class="field-label" for="show-date">Date</label>
+                <input id="show-date" type="date">
+              </div>
+
+              <div>
+                <label class="field-label" for="show-time">Showtime</label>
+                <select id="show-time">
+                  <option>10:00 AM</option>
+                  <option>1:30 PM</option>
+                  <option>5:00 PM</option>
+                  <option>8:30 PM</option>
+                </select>
+              </div>
             </div>
 
             <div class="section-divider"></div>
-            <div class="step-heading"><span class="step-number">02</span><div><h2>Pick your seats</h2><p class="muted">The best spot is waiting for you.</p></div></div>
 
-            <div class="screen-area"><div class="screen-curve"></div><span>SCREEN</span></div>
-            <div class="seat-legend">
-              <span><i class="legend-seat available"></i> Available</span>
-              <span><i class="legend-seat chosen"></i> Selected</span>
-              <span><i class="legend-seat taken"></i> Occupied</span>
+            <div class="step-heading">
+              <span class="step-number">02</span>
+              <div>
+                <h2>Pick your seats</h2>
+                <p class="muted">The best spot is waiting for you.</p>
+              </div>
             </div>
+
+            <div class="screen-area">
+              <div class="screen-curve"></div>
+              <span>SCREEN</span>
+            </div>
+
+            <div class="seat-legend">
+              <span>
+                <i class="legend-seat available"></i>
+                Available
+              </span>
+              <span>
+                <i class="legend-seat chosen"></i>
+                Selected
+              </span>
+              <span>
+                <i class="legend-seat taken"></i>
+                Occupied
+              </span>
+            </div>
+
             <div id="seat-map" class="seat-map"></div>
-            <p class="seat-help">Select up to 8 seats per booking.</p>
+
+            <p class="seat-help">
+              Select up to 8 seats per booking.
+            </p>
           </div>
 
+
+          <!-- BOOKING SUMMARY -->
           <aside class="summary-card">
             <span class="eyebrow">YOUR EXPERIENCE</span>
             <h2>Booking <span>summary.</span></h2>
-            <div id="summary-art" class="summary-art"><span>🎬</span></div>
+
+            <div id="summary-art" class="summary-art">
+              <span>🎬</span>
+            </div>
+
             <h3 id="summary-movie">Choose a movie</h3>
-            <p id="summary-genre" class="muted">Your next favourite awaits.</p>
-            <div class="summary-line"><span>Show date</span><strong id="summary-date">Not selected</strong></div>
-            <div class="summary-line"><span>Showtime</span><strong id="summary-time">10:00 AM</strong></div>
-            <div class="summary-line"><span>Seats</span><strong id="summary-seats">None</strong></div>
-            <div class="summary-line total-line"><span>Total amount</span><strong id="summary-total">₹0</strong></div>
-            <button id="book-button" class="btn btn-primary full-width">Confirm booking <span>→</span></button>
-            <p class="fine-print">Demo booking only. No payment is collected.</p>
+            <p id="summary-genre" class="muted">
+              Your next favourite awaits.
+            </p>
+
+            <div class="summary-line">
+              <span>Show date</span>
+              <strong id="summary-date">Not selected</strong>
+            </div>
+
+            <div class="summary-line">
+              <span>Showtime</span>
+              <strong id="summary-time">10:00 AM</strong>
+            </div>
+
+            <div class="summary-line">
+              <span>Seats</span>
+              <strong id="summary-seats">None</strong>
+            </div>
+
+            <div class="summary-line total-line">
+              <span>Total amount</span>
+              <strong id="summary-total">₹0</strong>
+            </div>
+
+            <button id="book-button" class="btn btn-primary full-width" type="button">
+              Confirm booking <span>→</span>
+            </button>
+
+            <p class="fine-print">
+              Demo booking only. No payment is collected.
+            </p>
+
             <div id="booking-message" role="status" aria-live="polite"></div>
           </aside>
+
         </div>
       </section>
     </section>
 
-    <!-- MY BOOKINGS PAGE -->
+
+    <!-- ================= MY BOOKINGS PAGE ================= -->
     <section class="page" id="page-mybookings">
+
       <div class="page-banner">
         <span class="eyebrow">YOUR CINEMA DIARY</span>
         <h1>Memories, <span>booked.</span></h1>
         <p>Your demo reservations, all in one place.</p>
       </div>
+
       <section class="content-section">
-        <div class="section-heading"><div><h2>My bookings</h2><p class="muted">Your booking history on this browser.</p></div><button class="btn btn-secondary" data-page="movies">+ New booking</button></div>
+        <div class="section-heading">
+          <div>
+            <h2>My bookings</h2>
+            <p class="muted">Your booking history on this browser.</p>
+          </div>
+
+          <button class="btn btn-secondary" type="button" data-page="movies">
+            + New booking
+          </button>
+        </div>
+
         <div id="booking-history" class="booking-history"></div>
       </section>
     </section>
+
+
+    <!-- ================= LOGIN PAGE ================= -->
+    <section class="page" id="page-login">
+
+      <div class="auth-layout">
+
+        <div class="auth-art">
+          <span class="eyebrow">WELCOME TO THE SHOW</span>
+
+          <h1>Your next<br>great story<br>starts <span>here.</span></h1>
+
+          <p>
+            Sign in to explore movies, plan your next outing
+            and keep your demo tickets together.
+          </p>
+
+          <div class="auth-art-ticket">
+            <span>🎬</span>
+            <div>
+              <strong>YOUR SEAT IS WAITING</strong>
+              <small>Lights down. Movie on.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-card">
+          <a href="#home" data-page="home" class="auth-back">
+            ← Back to home
+          </a>
+
+          <span class="eyebrow">YOUR CINEMA ACCOUNT</span>
+          <h2>Welcome <span>back.</span></h2>
+          <p class="muted">
+            Enter your details to continue to CineBook.
+          </p>
+
+          <form id="login-form">
+            <label class="field-label" for="login-email">
+              Email address
+            </label>
+
+            <input
+              id="login-email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            >
+
+            <label class="field-label" for="login-password">
+              Password
+            </label>
+
+            <div class="password-wrap">
+              <input
+                id="login-password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Enter any demo password"
+                required
+                minlength="4"
+              >
+
+              <button
+                type="button"
+                class="password-toggle"
+                data-toggle-password="login-password"
+                aria-label="Show or hide password"
+              >Show</button>
+            </div>
+
+            <p class="auth-hint">
+              Demo login only. No password is sent to a server or saved.
+            </p>
+
+            <button class="btn btn-primary full-width" type="submit">
+              Sign in <span>→</span>
+            </button>
+
+            <p
+              id="login-message"
+              class="auth-message"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+
+          <p class="auth-switch">
+            New to CineBook?
+            <button type="button" class="inline-link" data-page="signup">
+              Create an account
+            </button>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= SIGN-UP PAGE ================= -->
+    <section class="page" id="page-signup">
+
+      <div class="auth-layout">
+
+        <div class="auth-art">
+          <span class="eyebrow">JOIN THE EXPERIENCE</span>
+
+          <h1>Make room<br>for more <span>magic.</span></h1>
+
+          <p>
+            Create your demo profile and make your next movie night
+            feel special.
+          </p>
+
+          <div class="auth-art-ticket">
+            <span>🍿</span>
+            <div>
+              <strong>YOUR STORY STARTS NOW</strong>
+              <small>Discover. Select. Enjoy.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-card">
+          <a href="#home" data-page="home" class="auth-back">
+            ← Back to home
+          </a>
+
+          <span class="eyebrow">BECOME A MEMBER</span>
+          <h2>Create your <span>account.</span></h2>
+          <p class="muted">
+            Just a few details to get started.
+          </p>
+
+          <form id="signup-form">
+            <label class="field-label" for="signup-name">
+              Full name
+            </label>
+
+            <input
+              id="signup-name"
+              type="text"
+              autocomplete="name"
+              placeholder="Your name"
+              required
+              minlength="2"
+              maxlength="60"
+            >
+
+            <label class="field-label" for="signup-email">
+              Email address
+            </label>
+
+            <input
+              id="signup-email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+              maxlength="120"
+            >
+
+            <label class="field-label" for="signup-password">
+              Create a demo password
+            </label>
+
+            <div class="password-wrap">
+              <input
+                id="signup-password"
+                type="password"
+                autocomplete="new-password"
+                placeholder="At least 4 characters"
+                required
+                minlength="4"
+                maxlength="100"
+              >
+
+              <button
+                type="button"
+                class="password-toggle"
+                data-toggle-password="signup-password"
+                aria-label="Show or hide password"
+              >Show</button>
+            </div>
+
+            <p class="auth-hint">
+              Use fictional demo details. Your password is not stored.
+            </p>
+
+            <button class="btn btn-primary full-width" type="submit">
+              Create demo account <span>→</span>
+            </button>
+
+            <p
+              id="signup-message"
+              class="auth-message"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+
+          <p class="auth-switch">
+            Already a member?
+            <button type="button" class="inline-link" data-page="login">
+              Sign in
+            </button>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
+
+  <!-- FOOTER -->
   <footer class="footer">
-    <a href="#home" class="logo" data-page="home">cine<span>book</span><i>.</i></a>
+    <a href="#home" class="logo" data-page="home">
+      cine<span>book</span><i>.</i>
+    </a>
+
     <p>Made for the love of cinema. <span>✦</span></p>
-    <span class="footer-tag">FRONTEND PROJECT · GITHUB PAGES</span>
+
+    <span class="footer-tag">
+      FRONTEND PROJECT · GITHUB PAGES
+    </span>
   </footer>
 
+
+  <!-- NOTIFICATION -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
 </body>
 </html>
