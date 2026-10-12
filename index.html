@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book movie tickets, explore films and select your cinema seats.">
+  <title>CineBook | Movie Ticket Management</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="logo">Cine<span>Book</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#movies">Movies</a>
+      <a href="#booking">Book Tickets</a>
+    </nav>
+    <a href="#movies" class="nav-button">Explore Movies</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR NEXT MOVIE NIGHT STARTS HERE</p>
+        <h1>Big Screen.<br><span>Big Experiences.</span></h1>
+        <p class="hero-description">
+          Discover your favourite movies, choose your seats,
+          and make every movie night memorable.
+        </p>
+        <a href="#movies" class="primary-button">Explore Movies →</a>
+        <div class="hero-stats">
+          <div><strong>6+</strong><span>Movies to explore</span></div>
+          <div><strong>Easy</strong><span>Seat selection</span></div>
+          <div><strong>Instant</strong><span>Demo confirmation</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Cinema ticket illustration">
+        <div class="ticket-art">
+          <span class="ticket-icon">🎬</span>
+          <p>YOUR MOVIE NIGHT</p>
+          <h2>Lights.<br>Camera.<br>Action.</h2>
+          <div class="ticket-line"></div>
+          <span>ADMIT ONE</span>
+        </div>
+        <span class="floating-star">✦</span>
+        <span class="floating-popcorn">🍿</span>
+      </div>
+    </section>
+
+    <section class="movies-section" id="movies">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">NOW SHOWING</p>
+          <h2>Find Your Movie</h2>
+          <p class="muted">Choose a movie to start your booking.</p>
+        </div>
+        <span class="movie-count" id="movie-count">6 MOVIES</span>
+      </div>
+
+      <div class="filter-bar">
+        <input id="movie-search" type="search"
+          placeholder="Search movies..." aria-label="Search movies">
+        <select id="genre-filter" aria-label="Filter by genre">
+          <option value="All">All genres</option>
+          <option value="Action">Action</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Drama">Drama</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Animation">Animation</option>
+        </select>
+      </div>
+
+      <div class="movie-grid" id="movie-grid">
+        <p>Loading movies...</p>
+      </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR CINEMA EXPERIENCE</p>
+          <h2>Book Your Tickets</h2>
+          <p class="muted">Select your movie, showtime and seats.</p>
+        </div>
+      </div>
+
+      <div class="booking-layout">
+        <div class="booking-panel">
+          <label for="selected-movie">Select movie</label>
+          <select id="selected-movie">
+            <option value="">Choose a movie</option>
+          </select>
+
+          <label for="show-date">Select date</label>
+          <input type="date" id="show-date">
+
+          <label for="show-time">Select showtime</label>
+          <select id="show-time">
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="1:30 PM">1:30 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="8:30 PM">8:30 PM</option>
+          </select>
+
+          <div class="screen">SCREEN THIS WAY</div>
+          <div class="seat-legend">
+            <span><i class="seat-example available"></i> Available</span>
+            <span><i class="seat-example selected"></i> Selected</span>
+            <span><i class="seat-example occupied"></i> Occupied</span>
+          </div>
+          <div id="seat-map" class="seat-map" aria-label="Cinema seat selection"></div>
+          <p class="muted seat-note">Click an available seat to select or deselect it.</p>
+        </div>
+
+        <aside class="summary-panel">
+          <p class="eyebrow">BOOKING SUMMARY</p>
+          <h3>Your Tickets</h3>
+          <div class="summary-row">
+            <span>Movie</span><strong id="summary-movie">Not selected</strong>
+          </div>
+          <div class="summary-row">
+            <span>Date</span><strong id="summary-date">Not selected</strong>
+          </div>
+          <div class="summary-row">
+            <span>Showtime</span><strong id="summary-time">10:00 AM</strong>
+          </div>
+          <div class="summary-row">
+            <span>Seats</span><strong id="summary-seats">None</strong>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total amount</span><strong id="summary-total">₹0</strong>
+          </div>
+          <button id="book-button" class="primary-button full-width">
+            Confirm Booking
+          </button>
+          <p class="muted small-text">
+            Demo only. No real payment is collected.
+          </p>
+          <div id="booking-message" role="status" aria-live="polite"></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home" class="logo">Cine<span>Book</span></a>
+    <p>Movie Ticket Management System · Frontend Project</p>
+    <p>Built with HTML, CSS, JavaScript & GitHub Actions.</p>
+  </footer>
+</body>
+</html>
