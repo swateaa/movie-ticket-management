@@ -1,6 +1,5 @@
 
 name: Movie Ticket Frontend CI/CD
-
 on:
   push:
     branches:
