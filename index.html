@@ -14,27 +14,42 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 
-  <!-- Grafana Faro Frontend Monitoring -->
-  <script>
-    (function () {
-      var webSdkScript = document.createElement("script");
-      webSdkScript.src =
-        "https://cdn.jsdelivr.net/npm/@grafana/faro-web-sdk/dist/bundle/faro-web-sdk.iife.js";
+ 
+<!-- Grafana Faro Frontend Monitoring -->
+<script>
+(function () {
+  var webSdkScript = document.createElement("script");
 
-      webSdkScript.onload = function () {
-        window.GrafanaFaroWebSdk.initializeFaro({
-          url: "https://faro-collector-prod-ap-south-1.grafana.net/collect/76bc880fa1006354def924355c420d4b",
-          app: {
-            name: "CineBook",
-            version: "1.0.0",
-            environment: "production"
-          }
-        });
-      };
+  webSdkScript.src =
+    "https://unpkg.com/@grafana/faro-web-sdk@2/dist/bundle/faro-web-sdk.iife.js";
 
-      document.head.appendChild(webSdkScript);
-    })();
-  </script>
+  webSdkScript.onload = function () {
+    window.GrafanaFaroWebSdk.initializeFaro({
+      url: "https://faro-collector-prod-ap-south-1.grafana.net/collect/76bc880fa1006354def924355c420d4b",
+      app: {
+        name: "CineBook",
+        version: "1.0.0",
+        environment: "production"
+      }
+    });
+
+    var webTracingScript = document.createElement("script");
+
+    webTracingScript.src =
+      "https://unpkg.com/@grafana/faro-web-tracing@2/dist/bundle/faro-web-tracing.iife.js";
+
+    webTracingScript.onload = function () {
+      window.GrafanaFaroWebSdk.faro.instrumentations.add(
+        new window.GrafanaFaroWebTracing.TracingInstrumentation()
+      );
+    };
+
+    document.head.appendChild(webTracingScript);
+  };
+
+  document.head.appendChild(webSdkScript);
+})();
+</script>
 </head>
 <body>
 
