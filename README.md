@@ -184,6 +184,8 @@ Login and booking interfaces should therefore be treated as frontend demonstrati
 👩‍💻 Author
 
 **Swati**
+**Shivansh**
+**Yash**
 
 GitHub: [@swateaa](https://github.com/swateaa)
 ⭐ If you find this project useful, consider giving the repository a star.
